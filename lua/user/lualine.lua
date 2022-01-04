@@ -77,7 +77,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "tokyonight",
+		theme = "nightfox",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "toggleterm" },
@@ -101,5 +101,5 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {},
-	extensions = {},
+	extensions = { "nvim-tree" },
 })
