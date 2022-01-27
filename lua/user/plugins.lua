@@ -71,23 +71,19 @@ return packer.startup(function(use)
   }
 
   -- themes
-  use 'folke/tokyonight.nvim'
+  use "folke/tokyonight.nvim"
   use({
     "catppuccin/nvim",
     as = "catppuccin"
   })
   use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    -- tag = 'v0.1.0', -- Optional tag release
-    -- config = function()
-    --     vim.cmd('colorscheme rose-pine')
-    -- end
+    "rose-pine/neovim",
+    as = "rose-pine"
   })
-  use 'EdenEast/nightfox.nvim'
+  use "EdenEast/nightfox.nvim"
   use "rebelot/kanagawa.nvim"
   use "projekt0n/github-nvim-theme"
-  use 'navarasu/onedark.nvim'
+  use "navarasu/onedark.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -134,6 +130,7 @@ return packer.startup(function(use)
     config = [[require("rust-tools")]],
     requires ="neovim/nvim-lspconfig",
   }
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
@@ -146,6 +143,7 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "nvim-treesitter/playground"
+  use "windwp/nvim-ts-autotag"
   use "romgrk/nvim-treesitter-context"
   -- use "mizlan/iswap.nvim"
 
