@@ -51,13 +51,13 @@ function _NODE_TOGGLE()
 	node:toggle()
 end
 
-local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
+local dust = Terminal:new({ cmd = "dust", hidden = true })
 
-function _NCDU_TOGGLE()
-	ncdu:toggle()
+function _DUST_TOGGLE()
+	dust:toggle()
 end
 
-local htop = Terminal:new({ cmd = "htop", hidden = true })
+local htop = Terminal:new({ cmd = "top", hidden = true })
 
 function _HTOP_TOGGLE()
 	htop:toggle()
