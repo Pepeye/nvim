@@ -113,6 +113,7 @@ local mappings = {
   ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
   -- ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
+
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -125,6 +126,15 @@ local mappings = {
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
 
+  ["+"] = {
+    name = "Fold",
+    m = {"<Cmd>:set foldmethod=manual<CR>", "Manual (default)"},
+    i = {"<Cmd>:set foldmethod=indent<CR>", "Indent"},
+    e = {"<Cmd>:set foldmethod=expr<CR>", "Expr"},
+    d = {"<Cmd>:set foldmethod=diff<CR>", "Diff"},
+    M = {"<Cmd>:set foldmethod=marker<CR>", "Marker"}
+  },
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -132,6 +142,13 @@ local mappings = {
     s = { "<cmd>PackerSync<cr>", "Sync" },
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
+
+  d = {
+    name = "Debug",
+    t = { "<cmd>lua require('dapui').toggle()<cr>", "toggle"},
+    o = { "<cmd>lua require('dapui').open()<cr>", "open"},
+    c = { "<cmd>lua require('dapui').open()<cr>", "close"},
   },
 
   r = {
