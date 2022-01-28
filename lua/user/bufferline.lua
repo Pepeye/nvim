@@ -55,7 +55,59 @@ bufferline.setup {
     --     return true
     --   end
     -- end,
-    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    -- offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "Explorer",
+        highlight = "PanelHeading",
+        padding = 1,
+        text_align = "left"
+      },
+      {
+        filetype = "DiffviewFiles",
+        text = "Diff",
+        highlight = "PanelHeading",
+        padding = 1,
+        text_align = "left"
+      },
+      {
+        filetype = "flutterToolsOutline",
+        text = "Flutter Outline",
+        highlight = "PanelHeading",
+        text_align = "left"
+      },
+      {
+        -- ensure symbols outline order has scopes first
+        filetype = "dapui",
+        text = "Debugger",
+        highlight = "PanelHeading",
+        padding = 1,
+        text_align = "left"
+      },
+      {
+        -- ensure symbols outline order has scopes first
+        filetype = "dapui_scopes",
+        text = "Debugger",
+        highlight = "PanelHeading",
+        padding = 1,
+        text_align = "left"
+      },
+      {
+        filetype = "Outline",
+        text = "Symbols",
+        highlight = "PanelHeading",
+        padding = 1,
+        text_align = "left"
+      },
+      {
+        filetype = "undotree",
+        text = "Undotree",
+        highlight = "PanelHeading",
+        padding = 1,
+        text_align = "left"
+      },
+    },
     show_buffer_icons = true,
     show_buffer_close_icons = true,
     show_close_icon = true,
