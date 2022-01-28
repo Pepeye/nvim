@@ -1,3 +1,4 @@
 pack/**
 sessions/**
-plugin/
+
+plugin/packer_compiled.lua

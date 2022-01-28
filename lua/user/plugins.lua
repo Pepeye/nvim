@@ -49,15 +49,50 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim"
   use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "ahmedkhalf/project.nvim"
   use "akinsho/toggleterm.nvim"
+  use "lewis6991/impatient.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  use "goolord/alpha-nvim"
   use "kyazdani42/nvim-tree.lua"
   use "kyazdani42/nvim-web-devicons"
+  use "folke/which-key.nvim"
+  use "nacro90/numb.nvim"
+  use "monaqa/dial.nvim"
+  use "norcalli/nvim-colorizer.lua"
+  use "windwp/nvim-spectre"
+  use "rcarriga/nvim-notify"
+  use "folke/zen-mode.nvim"
+  use {
+    "nyngwang/NeoZoom.lua",
+  }
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+      }
+    end
+  }
 
   -- themes
-  use 'EdenEast/nightfox.nvim'
-  use 'folke/tokyonight.nvim'
+  use "folke/tokyonight.nvim"
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  })
+  use({
+    "rose-pine/neovim",
+    as = "rose-pine"
+  })
+  use "EdenEast/nightfox.nvim"
+  use "rebelot/kanagawa.nvim"
+  use "projekt0n/github-nvim-theme"
+  use "navarasu/onedark.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -104,6 +139,7 @@ return packer.startup(function(use)
     config = [[require("rust-tools")]],
     requires ="neovim/nvim-lspconfig",
   }
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
@@ -116,8 +152,9 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "nvim-treesitter/playground"
+  use "windwp/nvim-ts-autotag"
   use "romgrk/nvim-treesitter-context"
-  use "mizlan/iswap.nvim"
+  -- use "mizlan/iswap.nvim"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
