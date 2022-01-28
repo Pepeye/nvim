@@ -129,11 +129,13 @@ return packer.startup(function(use)
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
+  use "folke/lsp-colors.nvim"
   use "b0o/SchemaStore.nvim"
   use {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   }
+  use "jbyuki/one-small-step-for-vimkind"
   use {
     "simrat39/rust-tools.nvim",
     config = [[require("rust-tools")]],

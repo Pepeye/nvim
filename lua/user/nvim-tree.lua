@@ -1,3 +1,4 @@
+local kind = require("user.lsp.kind").icons
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
@@ -60,10 +61,10 @@ nvim_tree.setup {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = kind.hint,
+      info = kind.info,
+      warning = kind.warn,
+      error = kind.error,
     },
   },
   update_focused_file = {
