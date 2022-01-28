@@ -34,3 +34,18 @@ use the lsp installer to install language servers
 ```
 :LspInstall <language>
 ```
+
+
+#### debugging
+install the following neovim packages
+
+```sh
+# install npm packages globally
+$ npm i -g eslint@latest neovim@latest prettier@latest pyright@latest neovim@latest tree-sitter-cli@latest typescript@latest typescript-language-server@latest
+
+```
+then use the dap installer
+
+```
+:DIInstall <language>
+```

@@ -135,6 +135,7 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   }
+  use "jbyuki/one-small-step-for-vimkind"
   use {
     "simrat39/rust-tools.nvim",
     config = [[require("rust-tools")]],
