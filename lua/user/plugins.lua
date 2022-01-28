@@ -167,6 +167,8 @@ return packer.startup(function(use)
 
   -- DAP
   use "mfussenegger/nvim-dap"
+  use "nvim-telescope/telescope-dap.nvim"
+  -- use "mfussenegger/nvim-dap-python"
   use "theHamsta/nvim-dap-virtual-text"
   use "rcarriga/nvim-dap-ui"
   use "Pocco81/DAPInstall.nvim"
