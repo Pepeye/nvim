@@ -106,30 +106,29 @@ local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     name = "Buffers",
-    F = {
-      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-      "Buffers"
-    },
-    j = { "<cmd>BufferPick<cr>", "Jump" },
-    f = { "<cmd>Telescope buffers<cr>", "Find" },
-    b = { "<cmd>b#<cr>", "Previous" },
-    w = { "<cmd>BufferWipeout<cr>", "Wipeout" },
-    e = {
-      "<cmd>BufferCloseAllButCurrent<cr>",
-      "Close all but current",
-    },
-    h = { "<cmd>BufferCloseBuffersLeft<cr>", "Close all to the left" },
-    l = {
-      "<cmd>BufferCloseBuffersRight<cr>",
-      "Close all to the right",
-    },
-    D = {
-      "<cmd>BufferOrderByDirectory<cr>",
+    d = {
+      "<cmd>BufferLineSortByDirectory<cr>",
       "Sort by directory",
     },
-    L = {
-      "<cmd>BufferOrderByLanguage<cr>",
-      "Sort by language",
+    e = {
+      "<cmd>BufferLineSortByExtension<cr>",
+      "Sort by extension",
+    },
+    t = { "<cmd>BufferLineSortByTabs<cr>", "Sort by tabs" },
+    f = { "<cmd>Telescope buffers<cr>", "Find" },
+    s = {
+      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "Search"
+    },
+    j = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+    n = { "<cmd>BufferLineMoveNext<cr>", "Next" },
+    p = { "<cmd>BufferLineMovePrev<cr>", "Previous" },
+    ["["] = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
+    ["]"] = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
+    g = {
+      name = "Groups",
+      c = { "<cmd>BufferLineGroupClose<cr>", "Close Group" },
+      t = { "<cmd>BufferLineGroupToggle<cr>", "Toggle Group" },
     },
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
