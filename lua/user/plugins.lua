@@ -139,7 +139,6 @@ return packer.startup(function(use)
   use "jbyuki/one-small-step-for-vimkind"
   use {
     "simrat39/rust-tools.nvim",
-    config = [[require("rust-tools")]],
     requires ="neovim/nvim-lspconfig",
   }
 
@@ -171,7 +170,12 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-dap.nvim"
   -- use "mfussenegger/nvim-dap-python"
   use "theHamsta/nvim-dap-virtual-text"
-  use "rcarriga/nvim-dap-ui"
+  use {
+    "rcarriga/nvim-dap-ui",
+    ft = { "python", "rust", "go", "typescript", "javascript" },
+    event = "BufReadPost",
+    requires = { "mfussenegger/nvim-dap" },
+  }
   use "Pocco81/DAPInstall.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim

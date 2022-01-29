@@ -9,6 +9,9 @@ local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
 
 
+local lsp_installer_servers = require "nvim-lsp-installer.servers"
+local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
+
 local status_ok, rust_tools = pcall(require, "rust-tools")
 if not status_ok then
     return
@@ -28,6 +31,7 @@ rust_tools.setup {
       -- standalone file support
       -- setting it to false may improve startup time
       standalone = true,
+      cmd_env = requested_server._default_options.cmd_env,
     }, -- rust-analyer options
 
     -- debugging stuff
