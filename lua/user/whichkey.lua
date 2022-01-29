@@ -135,6 +135,16 @@ local mappings = {
     M = {"<Cmd>:set foldmethod=marker<CR>", "Marker"}
   },
 
+  ["Lr"] = {
+    name = "Rust",
+    c = { "<cmd>RustOpenCargo<cr>", "Open Cargo"},
+    d = { "<cmd>RustDebuggables<cr>", "Debugging"},
+    i = { "<cmd>RustToggleInlayHints<cr>", "Inlay Hints"},
+    h = { "<cmd>RustHoverRange<cr>", "Hover Range"},
+    m = { "<cmd>RustExpandMacro<cr>", "Macros"},
+    r = { "<cmd>RustRunnables<cr>", "Runnables"},
+  },
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -146,12 +156,16 @@ local mappings = {
 
   d = {
     name = "Debug",
-    t = { "<cmd>lua require('dapui').toggle()<cr>", "toggle"},
-    o = { "<cmd>lua require('dapui').open()<cr>", "open"},
-    c = { "<cmd>lua require('dapui').open()<cr>", "close"},
+    u = { "<cmd>lua require('dapui').toggle()<cr>", "dap ui"},
+    v = { "<cmd>lua require('dap').step_over()<CR>", "step over"},
+    o = { "<cmd>lua require('dap').step_out()<CR>", "step out"},
+    i = { "<cmd>lua require('dap').step_into()<CR>", "step into"},
+    s = { "<cmd>lua require('dap.ui.variables').scopes()", "scopes"},
+    h = { "<cmd>lua require('dap.ui.variables').hover()<CR>", "hover"},
+    b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "breakpoint"},
   },
 
-  r = {
+  R = {
     name = "Replace",
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
