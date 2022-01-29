@@ -1,3 +1,4 @@
+local icons = require("user.lsp.kind").bufferline
 local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then
   return
@@ -13,14 +14,14 @@ bufferline.setup {
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
-    indicator_icon = "▎",
-    buffer_close_icon = "",
+    indicator_icon = icons.indicator_icon,
+    buffer_close_icon = icons.buffer_close_icon,
     -- buffer_close_icon = '',
-    modified_icon = "●",
-    close_icon = "",
+    modified_icon = icons.modified_icon,
+    close_icon = icons.close_icon,
     -- close_icon = '',
-    left_trunc_marker = "",
-    right_trunc_marker= "",
+    left_trunc_marker = icons.left_trunc_marker,
+    right_trunc_marker= icons.left_trunc_marker,
     --- name_formatter can be used to change the buffer's label in the bufferline.
     --- Please note some names can/will break the
     --- bufferline so use this at your discretion knowing that it has
@@ -34,7 +35,8 @@ bufferline.setup {
     max_name_length = 30,
     max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
     tab_size = 21,
-    diagnostics = false, -- | "nvim_lsp" | "coc",
+    -- diagnostics = false, -- | "nvim_lsp" | "coc",
+    diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
     -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
     --   return "("..count..")"
@@ -122,6 +124,29 @@ bufferline.setup {
     --   -- add custom logic
     --   return buffer_a.modified > buffer_b.modified
     -- end
+    groups = {
+      options = {
+        toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+      },
+      items = {
+        {
+          name = "Tests", -- Mandatory
+          highlight = {gui = "underline", guisp = "#98c379"}, -- Optional
+          icon = icons.groups.test, -- Optional
+          matcher = function(buf) -- Mandatory
+            return buf.filename:match('%.test') or buf.filename:match('%.spec')
+          end,
+        },
+        {
+          name = "Docs",
+          highlight = {gui = "undercurl", guisp = "#56b6c2"},
+          icon = icons.groups.docs,
+          matcher = function(buf)
+            return buf.filename:match('%.md') or buf.filename:match('%.txt')
+          end,
+        },
+      },
+    },
   },
   highlights = {
     fill = {

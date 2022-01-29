@@ -105,8 +105,26 @@ local m_mappings = {
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
+    name = "Buffers",
+    d = {
+      "<cmd>BufferLineSortByDirectory<cr>",
+      "Sort by directory",
+    },
+    e = {
+      "<cmd>BufferLineSortByExtension<cr>",
+      "Sort by extension",
+    },
+    t = { "<cmd>BufferLineSortByTabs<cr>", "Sort by tabs" },
+    f = { "<cmd>Telescope buffers<cr>", "Find" },
+    s = {
+      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "Search"
+    },
+    j = { "<cmd>BufferLinePick<cr>", "Pick Buffer" },
+    n = { "<cmd>BufferLineMoveNext<cr>", "Next" },
+    p = { "<cmd>BufferLineMovePrev<cr>", "Previous" },
+    ["["] = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
+    ["]"] = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   -- ["w"] = { "<cmd>w!<CR>", "Save" },
@@ -123,6 +141,8 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   ["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
+  ["q"] = { "<cmd>q!<CR>", "Quit" },
+  ["w"] = { "<cmd>w!<CR>", "Save" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
   ["gy"] = "Link",
 
@@ -133,16 +153,6 @@ local mappings = {
     e = {"<Cmd>:set foldmethod=expr<CR>", "Expr"},
     d = {"<Cmd>:set foldmethod=diff<CR>", "Diff"},
     M = {"<Cmd>:set foldmethod=marker<CR>", "Marker"}
-  },
-
-  ["Lr"] = {
-    name = "Rust",
-    c = { "<cmd>RustOpenCargo<cr>", "Open Cargo"},
-    d = { "<cmd>RustDebuggables<cr>", "Debugging"},
-    i = { "<cmd>RustToggleInlayHints<cr>", "Inlay Hints"},
-    h = { "<cmd>RustHoverRange<cr>", "Hover Range"},
-    m = { "<cmd>RustExpandMacro<cr>", "Macros"},
-    r = { "<cmd>RustRunnables<cr>", "Runnables"},
   },
 
   p = {
@@ -165,7 +175,7 @@ local mappings = {
     b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "breakpoint"},
   },
 
-  R = {
+  r = {
     name = "Replace",
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
@@ -233,6 +243,19 @@ local mappings = {
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
+    },
+  },
+
+  L = {
+    name = "Languages",
+    r = {
+      name = "Rust",
+      c = { "<cmd>RustOpenCargo<cr>", "Open Cargo"},
+      d = { "<cmd>RustDebuggables<cr>", "Debugging"},
+      i = { "<cmd>RustToggleInlayHints<cr>", "Inlay Hints"},
+      h = { "<cmd>RustHoverRange<cr>", "Hover Range"},
+      m = { "<cmd>RustExpandMacro<cr>", "Macros"},
+      r = { "<cmd>RustRunnables<cr>", "Runnables"},
     },
   },
 
