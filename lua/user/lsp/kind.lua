@@ -147,4 +147,19 @@ M.file_icons = {
   White = { "", "", "", "", "", "" },
 }
 
+M.bufferline = {
+  indicator_icon = "▎",
+  buffer_close_icon = "",
+  -- buffer_close_icon = '',
+  modified_icon = "●",
+  close_icon = "",
+  -- close_icon = '',
+  left_trunc_marker = "",
+  right_trunc_marker= "",
+  groups = {
+    test = "",
+    docs = "",
+  },
+}
+
 return M

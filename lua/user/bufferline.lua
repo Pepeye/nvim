@@ -1,3 +1,4 @@
+local icons = require("user.lsp.kind").bufferline
 local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then
   return
@@ -13,14 +14,14 @@ bufferline.setup {
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
-    indicator_icon = "▎",
-    buffer_close_icon = "",
+    indicator_icon = icons.indicator_icon,
+    buffer_close_icon = icons.buffer_close_icon,
     -- buffer_close_icon = '',
-    modified_icon = "●",
-    close_icon = "",
+    modified_icon = icons.modified_icon,
+    close_icon = icons.close_icon,
     -- close_icon = '',
-    left_trunc_marker = "",
-    right_trunc_marker= "",
+    left_trunc_marker = icons.left_trunc_marker,
+    right_trunc_marker= icons.left_trunc_marker,
     --- name_formatter can be used to change the buffer's label in the bufferline.
     --- Please note some names can/will break the
     --- bufferline so use this at your discretion knowing that it has
@@ -123,6 +124,34 @@ bufferline.setup {
     --   -- add custom logic
     --   return buffer_a.modified > buffer_b.modified
     -- end
+    groups = {
+      options = {
+        toggle_hidden_on_enter = true -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+      },
+      items = {
+        {
+          name = "Tests", -- Mandatory
+          highlight = {gui = "underline", guisp = "blue"}, -- Optional
+          priority = 2, -- determines where it will appear relative to other groups (Optional)
+          icon = icons.groups.test, -- Optional
+          matcher = function(buf) -- Mandatory
+            return buf.filename:match('%_test') or buf.filename:match('%_spec')
+          end,
+        },
+        {
+          name = "Docs",
+          highlight = {gui = "undercurl", guisp = "green"},
+          icon = icons.groups.docs,
+          auto_close = false,  -- whether or not close this group if it doesn't contain the current buffer
+          matcher = function(buf)
+            return buf.filename:match('%.md') or buf.filename:match('%.txt')
+          end,
+          separator = { -- Optional
+            style = require('bufferline.groups').separator.tab
+          },
+        },
+      },
+    },
   },
   highlights = {
     fill = {
