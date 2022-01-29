@@ -1,9 +1,12 @@
+-- settings
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
 require "user.colorscheme"
+-- code completion, diagnosticsq
 require "user.cmp"
 require "user.lsp"
+-- other plugins
 require "user.telescope"
 require "user.treesitter"
 require "user.autopairs"
@@ -27,4 +30,6 @@ require "user.neoscroll"
 require "user.todo"
 require "user.surround"
 require "user.notify"
+-- debugging, languages
 require "user.dapui"
+require "user.rust"
