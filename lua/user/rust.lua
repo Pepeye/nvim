@@ -8,32 +8,14 @@ local extension_path = string.format("/User/%s/.vscode/extensions/vadimcn.vscode
 local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
 
-
-local lsp_installer_servers = require "nvim-lsp-installer.servers"
-local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
-
 local status_ok, rust_tools = pcall(require, "rust-tools")
 if not status_ok then
     return
 end
 
 rust_tools.setup {
-  opts = {
-    tools = { -- rust-tools options
-      -- Automatically set inlay hints (type hints)
-      autoSetHints = true,
-    },
-
-    -- all the opts to send to nvim-lspconfig
-    -- these override the defaults set by rust-tools.nvim
-    -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
-    server = {
-      -- standalone file support
-      -- setting it to false may improve startup time
-      standalone = true,
-      cmd_env = requested_server._default_options.cmd_env,
-    }, -- rust-analyer options
-
+  {
+    -- set other config
     -- debugging stuff
     dap = {
       adapter = require('rust-tools.dap').get_codelldb_adapter(

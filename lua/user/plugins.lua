@@ -172,7 +172,7 @@ return packer.startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   use {
     "rcarriga/nvim-dap-ui",
-    ft = { "python", "rust", "go", "typescript", "javascript" },
+    -- ft = { "python", "rust", "go", "typescript", "javascript" },
     event = "BufReadPost",
     requires = { "mfussenegger/nvim-dap" },
   }
