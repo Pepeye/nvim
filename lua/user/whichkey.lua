@@ -146,9 +146,13 @@ local mappings = {
 
   d = {
     name = "Debug",
-    t = { "<cmd>lua require('dapui').toggle()<cr>", "toggle"},
-    o = { "<cmd>lua require('dapui').open()<cr>", "open"},
-    c = { "<cmd>lua require('dapui').open()<cr>", "close"},
+    u = { "<cmd>lua require('dapui').toggle()<cr>", "dap ui"},
+    v = { "<cmd>lua require('dap').step_over()<CR>", "step over"},
+    o = { "<cmd>lua require('dap').step_out()<CR>", "step out"},
+    i = { "<cmd>lua require('dap').step_into()<CR>", "step into"},
+    s = { "<cmd>lua require('dap.ui.variables').scopes()", "scopes"},
+    h = { "<cmd>lua require('dap.ui.variables').hover()<CR>", "hover"},
+    b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "breakpoint"},
   },
 
   r = {
