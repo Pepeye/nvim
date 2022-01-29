@@ -125,11 +125,6 @@ local mappings = {
     p = { "<cmd>BufferLineMovePrev<cr>", "Previous" },
     ["["] = { "<cmd>BufferLineCyclePrev<cr>", "Previous Buffer" },
     ["]"] = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
-    g = {
-      name = "Groups",
-      c = { "<cmd>BufferLineGroupClose<cr>", "Close Group" },
-      t = { "<cmd>BufferLineGroupToggle<cr>", "Toggle Group" },
-    },
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   -- ["w"] = { "<cmd>w!<CR>", "Save" },

@@ -131,24 +131,19 @@ bufferline.setup {
       items = {
         {
           name = "Tests", -- Mandatory
-          highlight = {gui = "underline", guisp = "blue"}, -- Optional
-          priority = 2, -- determines where it will appear relative to other groups (Optional)
+          highlight = {gui = "underline", guisp = "#98c379"}, -- Optional
           icon = icons.groups.test, -- Optional
           matcher = function(buf) -- Mandatory
-            return buf.filename:match('%_test') or buf.filename:match('%_spec')
+            return buf.filename:match('%.test') or buf.filename:match('%.spec')
           end,
         },
         {
           name = "Docs",
-          highlight = {gui = "undercurl", guisp = "green"},
+          highlight = {gui = "undercurl", guisp = "#56b6c2"},
           icon = icons.groups.docs,
-          auto_close = false,  -- whether or not close this group if it doesn't contain the current buffer
           matcher = function(buf)
             return buf.filename:match('%.md') or buf.filename:match('%.txt')
           end,
-          separator = { -- Optional
-            style = require('bufferline.groups').separator.tab
-          },
         },
       },
     },
