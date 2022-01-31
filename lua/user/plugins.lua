@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- custom
+  use "lewis6991/impatient.nvim" -- needs to be near start of vim file
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim"
   use "akinsho/bufferline.nvim"
@@ -53,7 +54,6 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "ahmedkhalf/project.nvim"
   use "akinsho/toggleterm.nvim"
-  use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "kyazdani42/nvim-tree.lua"
@@ -139,13 +139,14 @@ return packer.startup(function(use)
   use "jbyuki/one-small-step-for-vimkind"
   use {
     "simrat39/rust-tools.nvim",
-    requires ="neovim/nvim-lspconfig",
+    -- requires ="neovim/nvim-lspconfig",
   }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-media-files.nvim"-- Telescope
+  use "nvim-telescope/telescope-ui-select.nvim"
 
   -- Treesitter
   use {
@@ -173,8 +174,8 @@ return packer.startup(function(use)
   use {
     "rcarriga/nvim-dap-ui",
     -- ft = { "python", "rust", "go", "typescript", "javascript" },
-    event = "BufReadPost",
-    requires = { "mfussenegger/nvim-dap" },
+    -- event = "BufReadPost",
+    -- requires = { "mfussenegger/nvim-dap" },
   }
   use "Pocco81/DAPInstall.nvim"
 

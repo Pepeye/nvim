@@ -167,12 +167,12 @@ local mappings = {
   d = {
     name = "Debug",
     u = { "<cmd>lua require('dapui').toggle()<cr>", "dap ui"},
-    v = { "<cmd>lua require('dap').step_over()<CR>", "step over"},
-    o = { "<cmd>lua require('dap').step_out()<CR>", "step out"},
-    i = { "<cmd>lua require('dap').step_into()<CR>", "step into"},
-    s = { "<cmd>lua require('dap.ui.variables').scopes()", "scopes"},
-    h = { "<cmd>lua require('dap.ui.variables').hover()<CR>", "hover"},
-    b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "breakpoint"},
+    v = { "<cmd>lua require('dap').step_over()<cr>", "step over"},
+    o = { "<cmd>lua require('dap').step_out()<cr>", "step out"},
+    i = { "<cmd>lua require('dap').step_into()<cr>", "step into"},
+    s = { "<cmd>lua require('dap.ui.variables').scopes()<cr>", "scopes"},
+    h = { "<cmd>lua require('dap.ui.variables').hover()<cr>", "hover"},
+    b = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "breakpoint"},
   },
 
   r = {
@@ -282,7 +282,7 @@ local mappings = {
     f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
   },
 
-  t = {
+  [";"] = {
     name = "Terminal",
     -- ["1"] = { ":1ToggleTerm<cr>", "1" },
     -- ["2"] = { ":2ToggleTerm<cr>", "2" },
@@ -295,6 +295,17 @@ local mappings = {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+  },
+
+  t = {
+    name = "+Trouble",
+    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnostics" },
+    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+    r = { "<cmd>Trouble lsp_references<cr>", "References" },
+    t = { "<cmd>TodoLocList <cr>", "Todo" },
+    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
   },
 
   T = {
