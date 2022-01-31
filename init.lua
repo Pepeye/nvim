@@ -2,7 +2,7 @@
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
-require "user.impatient"
+-- require "user.impatient"
 require "user.colorscheme"
 -- code completion, diagnosticsq
 require "user.cmp"

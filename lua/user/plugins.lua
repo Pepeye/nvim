@@ -46,7 +46,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- custom
-  use "lewis6991/impatient.nvim" -- needs to be near start of vim file
+  -- use "lewis6991/impatient.nvim" -- needs to be near start of vim file
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim"
   use "akinsho/bufferline.nvim"
