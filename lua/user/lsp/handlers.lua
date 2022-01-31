@@ -1,3 +1,4 @@
+local kind = require("user.lsp.kind").icons
 local M = {}
 
 M.setup = function()
@@ -7,10 +8,10 @@ M.setup = function()
     --   info
     --   question
     --   warning
-    { name = "DiagnosticSignError", text = " " },
-    { name = "DiagnosticSignWarn", text = " " },
-    { name = "DiagnosticSignHint", text = "ﯦ " },
-    { name = "DiagnosticSignInfo", text = " " },
+    { name = "DiagnosticSignError", text = kind.error },
+    { name = "DiagnosticSignWarn", text = kind.warn },
+    { name = "DiagnosticSignHint", text = kind.hint },
+    { name = "DiagnosticSignInfo", text = kind.info },
   }
 
   for _, sign in ipairs(signs) do

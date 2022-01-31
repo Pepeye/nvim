@@ -22,10 +22,10 @@ rust_tools.setup {
     -- tools = {},
 
     -- debugging stuff
-    -- dap = {
-    --   adapter = require('rust-tools.dap').get_codelldb_adapter(
-    --     codelldb_path, liblldb_path)
-    -- },
+    dap = {
+      adapter = require('rust-tools.dap').get_codelldb_adapter(
+        codelldb_path, liblldb_path)
+    },
     -- default settings below
     -- dap = {
     --   adapter = {

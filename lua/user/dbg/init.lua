@@ -1,5 +1,3 @@
-require("telescope").load_extension("dap")
-
 -- loop to configure every installed debugger with defaults
 local status_ok, dap_install = pcall(require, "dap-install")
 if not status_ok then
