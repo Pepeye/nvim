@@ -4,8 +4,10 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+telescope.load_extension "dap"
 telescope.load_extension "media_files"
 telescope.load_extension "ui-select"
+
 
 telescope.setup {
   defaults = {
