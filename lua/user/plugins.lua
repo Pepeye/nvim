@@ -81,6 +81,7 @@ return packer.startup(function(use)
 
   -- themes
   use "folke/tokyonight.nvim"
+  use "arcticicestudio/nord-vim"
   use({
     "catppuccin/nvim",
     as = "catppuccin"
