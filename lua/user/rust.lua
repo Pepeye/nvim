@@ -40,7 +40,7 @@ rust_tools.setup {
           },
           diagnostics = {
             enable = true,
-            disabled = { "unresolved-proc-macro" },
+            -- disabled = { "unresolved-proc-macro" },
             enableExperimental = true,
           },
           -- enable clippy on save
