@@ -304,7 +304,8 @@ local mappings = {
     l = { "<cmd>Trouble loclist<cr>", "LocationList" },
     q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
-    t = { "<cmd>TodoLocList <cr>", "Todo" },
+    s = { "<cmd>TodoTrouble <cr>", "Todo Search" },
+    t = { "<cmd>TodoLocList <cr>", "Todo List" },
     w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnostics" },
   },
 
