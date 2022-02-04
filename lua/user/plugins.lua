@@ -93,7 +93,6 @@ return packer.startup(function(use)
   use "EdenEast/nightfox.nvim"
   use "rebelot/kanagawa.nvim"
   use "projekt0n/github-nvim-theme"
-  use "navarasu/onedark.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -132,7 +131,6 @@ return packer.startup(function(use)
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
   use "folke/lsp-colors.nvim"
-  use "onsails/lspkind-nvim"
   use "b0o/SchemaStore.nvim"
   use {
     "folke/trouble.nvim",
