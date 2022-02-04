@@ -132,6 +132,7 @@ return packer.startup(function(use)
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
   use "folke/lsp-colors.nvim"
+  use "onsails/lspkind-nvim"
   use "b0o/SchemaStore.nvim"
   use {
     "folke/trouble.nvim",
