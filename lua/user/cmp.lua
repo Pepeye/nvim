@@ -100,7 +100,7 @@ cmp.setup {
       -- Kind icons
       if entry.source.name == "tabnine" then
         -- if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-          -- menu = entry.completion_item.data.detail .. " " .. menu
+        --   menu = entry.completion_item.data.detail .. " " .. menu
         -- end
         vim_item.kind = " "
       end
@@ -133,7 +133,7 @@ cmp.setup {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }

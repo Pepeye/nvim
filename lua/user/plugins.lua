@@ -129,6 +129,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
+  -- use "onsails/lspkind-nvim"
   use "ray-x/lsp_signature.nvim"
   use "folke/lsp-colors.nvim"
   use "b0o/SchemaStore.nvim"
