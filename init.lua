@@ -33,3 +33,4 @@ require "user.notify"
 -- debugging, languages
 require "user.dapui"
 require "user.rust"
+require "user.flutter"

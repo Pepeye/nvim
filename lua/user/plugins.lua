@@ -142,6 +142,10 @@ return packer.startup(function(use)
     "simrat39/rust-tools.nvim",
     -- requires ="neovim/nvim-lspconfig",
   }
+  use {
+    "akinsho/flutter-tools.nvim",
+    requires = "nvim-lua/plenary.nvim"
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
